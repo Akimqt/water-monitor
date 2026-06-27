@@ -5,7 +5,14 @@ async function tryFetch<T>(path: string, opts?: RequestInit): Promise<{ ok: bool
   try {
     const ctrl = new AbortController();
     const id = setTimeout(() => ctrl.abort(), 4000);
-    const r = await fetch(`${API_BASE_URL}${path}`, { ...opts, signal: ctrl.signal });
+    const r = await fetch(`${API_BASE_URL}${path}`, { 
+  ...opts, 
+  signal: ctrl.signal,
+  headers: {
+    ...opts?.headers,
+    'ngrok-skip-browser-warning': 'true'
+  }
+});
     clearTimeout(id);
     if (!r.ok) return { ok: false, data: null };
     return { ok: true, data: (await r.json()) as T };
