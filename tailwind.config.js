@@ -1,0 +1,40 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        "bg-primary": "var(--color-bg-primary)",
+        "bg-secondary": "var(--color-bg-secondary)",
+        "bg-card": "var(--color-bg-card)",
+        sidebar: "var(--color-sidebar)",
+        "sidebar-deep": "var(--color-sidebar-deep)",
+        "accent-blue": "var(--color-accent-blue)",
+        "accent-blue-light": "var(--color-accent-blue-light)",
+        "accent-blue-pale": "var(--color-accent-blue-pale)",
+        cta: "var(--color-cta)",
+        "cta-hover": "var(--color-cta-hover)",
+        "cta-pale": "var(--color-cta-pale)",
+        "cta-light": "var(--color-cta-light)",
+        "text-primary": "var(--color-text-primary)",
+        "text-secondary": "var(--color-text-secondary)",
+        "text-muted": "var(--color-text-muted)",
+        "border-color": "var(--color-border)",
+        "border-strong": "var(--color-border-strong)",
+        success: "var(--color-success)",
+        danger: "var(--color-danger)",
+        "danger-pale": "var(--color-danger-pale)",
+        warning: "var(--color-warning)",
+      },
+      fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] },
+      boxShadow: {
+        card: "0 1px 3px rgba(30,74,140,0.08), 0 4px 16px rgba(30,74,140,0.06)",
+        "card-hover": "0 8px 32px rgba(30,74,140,0.14), 0 2px 8px rgba(30,74,140,0.08)",
+        sidebar: "4px 0 24px rgba(30,74,140,0.18)",
+        modal: "0 20px 60px rgba(30,74,140,0.16)",
+        "orange-glow": "0 4px 16px rgba(232,98,26,0.25)",
+      },
+    },
+  },
+  plugins: [],
+};
